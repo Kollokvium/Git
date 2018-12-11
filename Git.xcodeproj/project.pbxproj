@@ -7,18 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		067C8B8821BFF82700924FBE /* GeneralAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067C8B8721BFF82700924FBE /* GeneralAlert.swift */; };
+		067C8B8C21BFFC8100924FBE /* UIApplication+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 067C8B8B21BFFC8100924FBE /* UIApplication+Extensions.swift */; };
 		06F79C562152866B008E84EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F79C552152866B008E84EB /* AppDelegate.swift */; };
 		06F79C582152866B008E84EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F79C572152866B008E84EB /* ViewController.swift */; };
 		06F79C5B2152866B008E84EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06F79C592152866B008E84EB /* Main.storyboard */; };
 		06F79C5D2152866E008E84EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06F79C5C2152866E008E84EB /* Assets.xcassets */; };
 		06F79C602152866E008E84EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06F79C5E2152866E008E84EB /* LaunchScreen.storyboard */; };
 		06F79C6A215286C6008E84EB /* GitResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F79C69215286C6008E84EB /* GitResponseModel.swift */; };
-		06F79C6D2152880B008E84EB /* GitRequestDomainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F79C6C2152880B008E84EB /* GitRequestDomainService.swift */; };
+		06F79C6D2152880B008E84EB /* GitDomainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F79C6C2152880B008E84EB /* GitDomainService.swift */; };
 		06F79C7121528CD0008E84EB /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F79C7021528CD0008E84EB /* NetworkLayer.swift */; };
 		0A71062B01D1834A27782E78 /* Pods_Git.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA2CA1CFB02C5A0BCB6C8D54 /* Pods_Git.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		067C8B8721BFF82700924FBE /* GeneralAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralAlert.swift; sourceTree = "<group>"; };
+		067C8B8B21BFFC8100924FBE /* UIApplication+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extensions.swift"; sourceTree = "<group>"; };
 		06F79C522152866B008E84EB /* Git.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Git.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06F79C552152866B008E84EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06F79C572152866B008E84EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,7 +31,7 @@
 		06F79C5F2152866E008E84EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06F79C612152866E008E84EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06F79C69215286C6008E84EB /* GitResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitResponseModel.swift; sourceTree = "<group>"; };
-		06F79C6C2152880B008E84EB /* GitRequestDomainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRequestDomainService.swift; sourceTree = "<group>"; };
+		06F79C6C2152880B008E84EB /* GitDomainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitDomainService.swift; sourceTree = "<group>"; };
 		06F79C7021528CD0008E84EB /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		AF5CEA73E9EBA803E1EF1112 /* Pods-Git.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Git.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Git/Pods-Git.debug.xcconfig"; sourceTree = "<group>"; };
 		DA2CA1CFB02C5A0BCB6C8D54 /* Pods_Git.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Git.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,13 +50,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		067C8B8621BFF7C000924FBE /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				067C8B8721BFF82700924FBE /* GeneralAlert.swift */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
+		067C8B8921BFFC5F00924FBE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				067C8B8D21BFFE9100924FBE /* StoryBoards */,
+				067C8B8621BFF7C000924FBE /* Alerts */,
+				067C8B8A21BFFC6900924FBE /* Extensions */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		067C8B8A21BFFC6900924FBE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				067C8B8B21BFFC8100924FBE /* UIApplication+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		067C8B8D21BFFE9100924FBE /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				06F79C592152866B008E84EB /* Main.storyboard */,
+				06F79C5E2152866E008E84EB /* LaunchScreen.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
 		06F79C492152866B008E84EB = {
 			isa = PBXGroup;
 			children = (
-				06F79C6B215287DD008E84EB /* DomainServices */,
-				06F79C6821528693008E84EB /* ViewController */,
-				06F79C6721528685008E84EB /* Model */,
 				06F79C542152866B008E84EB /* Git */,
+				06F79C6821528693008E84EB /* ViewController */,
+				06F79C6B215287DD008E84EB /* DomainServices */,
+				067C8B8921BFFC5F00924FBE /* Resources */,
+				06F79C6721528685008E84EB /* Model */,
 				06F79C532152866B008E84EB /* Products */,
 				D42B3C6CA7FE0C2B92A46156 /* Pods */,
 				3B433D01F7AEE794E3F7C253 /* Frameworks */,
@@ -71,9 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				06F79C552152866B008E84EB /* AppDelegate.swift */,
-				06F79C592152866B008E84EB /* Main.storyboard */,
 				06F79C5C2152866E008E84EB /* Assets.xcassets */,
-				06F79C5E2152866E008E84EB /* LaunchScreen.storyboard */,
 				06F79C612152866E008E84EB /* Info.plist */,
 			);
 			path = Git;
@@ -98,7 +136,7 @@
 		06F79C6B215287DD008E84EB /* DomainServices */ = {
 			isa = PBXGroup;
 			children = (
-				06F79C6C2152880B008E84EB /* GitRequestDomainService.swift */,
+				06F79C6C2152880B008E84EB /* GitDomainService.swift */,
 				06F79C7021528CD0008E84EB /* NetworkLayer.swift */,
 			);
 			path = DomainServices;
@@ -240,7 +278,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				06F79C7121528CD0008E84EB /* NetworkLayer.swift in Sources */,
-				06F79C6D2152880B008E84EB /* GitRequestDomainService.swift in Sources */,
+				067C8B8C21BFFC8100924FBE /* UIApplication+Extensions.swift in Sources */,
+				067C8B8821BFF82700924FBE /* GeneralAlert.swift in Sources */,
+				06F79C6D2152880B008E84EB /* GitDomainService.swift in Sources */,
 				06F79C6A215286C6008E84EB /* GitResponseModel.swift in Sources */,
 				06F79C582152866B008E84EB /* ViewController.swift in Sources */,
 				06F79C562152866B008E84EB /* AppDelegate.swift in Sources */,

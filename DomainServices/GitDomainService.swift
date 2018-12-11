@@ -16,7 +16,7 @@ extension GitDomainService: TargetType {
         return "repositories"
     }
     
-    var method: Alamofire.HTTPMethod {
+    var method: Moya.Method {
         switch self {
         case .getGitInfo:
             return .get

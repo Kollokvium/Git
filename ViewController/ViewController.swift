@@ -13,12 +13,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getGitInfo()
-        setupStyle()
      }
     
     func getGitInfo() {
         NetworkLayer().getGitInfo(completion: { gitModel, error in
-            guard let gitModel = gitModel, error == nil else {
+            guard let gitModel = gitModel else {
                 return self.showAlert(error: error?.localizedDescription)
             }
             
@@ -35,22 +34,11 @@ class ViewController: UIViewController {
     }
     
     func showAlert(error: String?) {
-        let alert = UIAlertController(title: "Alert",
-                                      message: error,
-                                      preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "Back",
-                                      style: .default,
-                                      handler: nil))
-        
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    func setupStyle() {
-        ownerAvatarImageView.contentMode = .scaleAspectFit
+        GeneralAlert.showMessage(title: "Alert", msg: error ?? "Something went wrong")
     }
     
     @IBAction func getGitInfoAction(_ sender: UIButton) {
         getGitInfo()
     }
 }
+

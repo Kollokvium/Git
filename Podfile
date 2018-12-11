@@ -5,7 +5,6 @@ target 'Git' do
 
   # Pods for Networking
   pod 'Moya'
-  pod 'Alamofire'
   pod 'Kingfisher'
 
   end
